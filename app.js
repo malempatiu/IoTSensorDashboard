@@ -5,7 +5,7 @@ const express                     = require('express'),
       http                        = require('http'),
       socketIO                    = require('socket.io'),
       path                        = require('path'),
-      getDhtSensorReadings        = require('./getDhtReadings');
+      getDhtSensorReadings        = require('./models/getDhtReadings');
 
 /* **************** APP Config ****************** */
 app.set('view engine', 'ejs');
