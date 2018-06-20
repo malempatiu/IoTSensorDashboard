@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+         <title>IoTSensorDashboard</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+         <link rel="stylesheet" href="/stylesheets/app.css">
+    </head>
+    <body>
+         <section class="sensor-heading">
+             <div class="container text-center">
+                 <div class="row">
+                     <div class="col-md-12 sensor-heading-conatiner">
+                         <img src="http://res.cloudinary.com/cityattractionimages/image/upload/v1529328459/ioticon.png" alt="logo">
+                         <p class="h1 text-white font-weight-bold">Internet of Things</p>
+                         <p class="h4 font-weight-bold text-black-50">Sensor Dashboard</p>
+                     </div>
+                 </div>
+             </div>
+         </section>
+         <section>
+             <div class="container sensor-readings-body">
+                 <div class="row">
+                     <div class="col-md-6">
+                         <div class="container sensor-readings-body-temp-6">
+                             <p class="text-center font-weight-bold">Temperature</p>
+                             <p class="text-center font-weight-bold text-white temperature-value">Loading...</p>    
+                         </div>
+                         <div class="container">
+                             <canvas id="temperature-chart"></canvas>
+                         </div>
+                     </div>
+                     <div class="col-md-6">
+                         <div class="container sensor-readings-body-hum-6">
+                             <p class="text-center font-weight-bold">Humidity</p>
+                             <p class="text-center font-weight-bold  text-white humidity-value">Loading...</p>
+                         </div>
+                         <div class="container">
+                             <canvas id="humidity-chart"></canvas>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+         
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+         <script type="text/javascript" src="/js/fetchreadings.js"></script>
+    </body>
+</html>
