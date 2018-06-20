@@ -19,6 +19,9 @@ const cache = {
      humidity: null
 };
 
+app.get('/', function (req, res) {
+     res.render('sensorreadings');
+});
 /* ************ Creatig HTTP Server ************ */
 const httpServer = http.createServer(app);
 /* ************* Integrating server with socket *************** */
