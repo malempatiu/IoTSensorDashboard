@@ -69,6 +69,10 @@ const addData = (arr, value, maxLen) => {
              
 /* ************ Initializing client side socket connection with "io" ***************** */
 const clientSocket = io();
+clientSocket.on('connect', () => {
+     console.log('Connected to server');    
+});
+
 /* ************* Listening on custom event for getting new temperature value ***************** */
 clientSocket.on('newTemparature', (temperatureObject) => {
       const dateNow = new Date();
