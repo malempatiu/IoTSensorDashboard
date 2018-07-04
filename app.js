@@ -49,12 +49,16 @@ const httpServer = http.createServer(app);
 const serverSocket = socketIO(httpServer);
 serverSocket.on('connection', (socket) => {
          console.log('Client has connected');
-         socket.emit('newTemparature', {
-                 temperature: sensorCacheData.getTemperature 
-            });   
-         socket.emit('newHumidity', {
-                 humidity: sensorCacheData.getHumidity 
-            });
+         setInterval(() => {
+                socket.emit('newTemparature', {
+                     temperature: sensorCacheData.getTemperature 
+                });
+            }, 2000);
+         setInterval(() => {
+                socket.emit('newHumidity', {
+                     humidity: sensorCacheData.getHumidity 
+                });
+            }, 2000);    
         
          //Listening for client disconnection
          socket.on('disconnect', () => {
