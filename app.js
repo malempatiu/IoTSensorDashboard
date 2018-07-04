@@ -34,13 +34,13 @@ serverSocket.on('connection', (socket) => {
              if (err) {
                  return console.log(`DHT Sensor Reading: ${err}`);
                 } else {
-                         if(cache.temperature != DHTTemp) {
+                         if(cache.temperature !== DHTTemp) {
                              //attaching cutom event for new temperature value
                               socket.emit('newTemparature', {
                                      temperature: DHTTemp 
                                 });   
                             }
-                         if(cache.humidity != DHTHumi){
+                         if(cache.humidity !== DHTHumi){
                              //attaching cutom event for new humidity value
                               socket.emit('newHumidity', {
                                      humidity: DHTHumi 

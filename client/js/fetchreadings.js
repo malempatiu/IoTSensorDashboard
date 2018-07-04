@@ -2,7 +2,7 @@
 const temperatureCanvasCtx = document.querySelector('#temperature-chart').getContext('2d');
 const temperatureChartConfig = {
      //temperature as a grid line chart
-     type: 'line',
+     type: 'bar',
      data: {
          //label for x-axis which represents time
          labels: [],
@@ -34,7 +34,7 @@ const temperatureChart = new Chart(temperatureCanvasCtx, temperatureChartConfig)
 /* ***************** Line Chart Config For Humidity ************************* */
 const humidityCanvasCtx = document.querySelector('#humidity-chart').getContext('2d');
 const humidityChartConfig = {
-     type: 'line',
+     type: 'bar',
      data: {
          labels: [],
          datasets: [{
