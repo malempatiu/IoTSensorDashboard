@@ -5,7 +5,7 @@ const express         = require('express'),
       http            = require('http'),
       socketIO        = require('socket.io'),
       path            = require('path'),
-      sensorCacheData = require('./models/getCachedSesnorReadings.js'),
+      sensorCacheData = require('./models/getCachedSensorReadings.js'),
       sensorDb        = require('./models/sensor_db');
 
 /* **************** APP Config ****************** */
