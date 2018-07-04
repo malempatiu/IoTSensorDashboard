@@ -52,12 +52,12 @@ serverSocket.on('connection', (socket) => {
          setInterval(() => {
                 console.log(sensorCacheData.getTemperature);
                 socket.emit('newTemparature', {
-                     temperature: sensorCacheData.getTemperature 
+                     temperature: sensorCacheData.getTemperature() 
                 });
             }, 2000);
          setInterval(() => {
                 socket.emit('newHumidity', {
-                     humidity: sensorCacheData.getHumidity 
+                     humidity: sensorCacheData.getHumidity() 
                 });
             }, 2000);    
         
