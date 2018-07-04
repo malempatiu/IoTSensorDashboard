@@ -50,6 +50,7 @@ const serverSocket = socketIO(httpServer);
 serverSocket.on('connection', (socket) => {
          console.log('Client has connected');
          setInterval(() => {
+                console.log(sensorCacheData.getTemperature);
                 socket.emit('newTemparature', {
                      temperature: sensorCacheData.getTemperature 
                 });
