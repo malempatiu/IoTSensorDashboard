@@ -20,7 +20,7 @@ app.get('/', function (req, res) {
     });
 
 /* **************** Fetching last ten temperature readings ******************** */ 
-app.get('/temperature/histroy', (err, res) => {
+app.get('/temperature/history', (err, res) => {
          
          if (err) {
                  console.log(`Temperature Fetching Error: ${err}`); 
@@ -37,7 +37,7 @@ app.get('/temperature/histroy', (err, res) => {
     });
 
 /* **************** Fetching last ten humidity readings ******************** */ 
-app.get('/humidity/histroy', (err, res) => {
+app.get('/humidity/history', (err, res) => {
          
         if (err) {
              console.log(`Humidity Fetching Error: ${err}`); 
