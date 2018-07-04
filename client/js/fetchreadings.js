@@ -9,7 +9,7 @@ const temperatureChartConfig = {
          //dataset for temperature values
          datasets: [{
              data: [],
-             borderColor: '#ff2c2c'
+             borderColor: 'rgba(255, 44, 44)'
             }]
         },
      options: {
@@ -34,12 +34,12 @@ const temperatureChart = new Chart(temperatureCanvasCtx, temperatureChartConfig)
 /* ***************** Line Chart Config For Humidity ************************* */
 const humidityCanvasCtx = document.querySelector('#humidity-chart').getContext('2d');
 const humidityChartConfig = {
-     type: 'bar',
+     type: 'line',
      data: {
          labels: [],
          datasets: [{
              data: [],
-             borderColor: '#2122ff'
+             backgroundColor: 'rgba(33, 34, 255, 0.7)'
             }]
         },
      options: {
