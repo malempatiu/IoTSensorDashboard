@@ -2,14 +2,14 @@
 const temperatureCanvasCtx = document.querySelector('#temperature-chart').getContext('2d');
 const temperatureChartConfig = {
      //temperature as a grid line chart
-     type: 'bar',
+     type: 'line',
      data: {
          //label for x-axis which represents time
          labels: [],
          //dataset for temperature values
          datasets: [{
              data: [],
-             borderColor: 'rgba(255, 44, 44)'
+             backgroundColor: 'rgba(255, 44, 44, 0.7)'
             }]
         },
      options: {
