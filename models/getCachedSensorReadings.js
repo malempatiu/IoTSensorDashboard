@@ -8,9 +8,6 @@ const cache = {
          humidity: null
     };
 
-const getTemperature = () => cache.temperature;
-const getHumidity    = () => cache.humidity;
-
 /* ********************* Function to read sensor readings every 2 seconds **************** */
 setInterval(() => {
      getDhtSensorReadings((err, DHTTemp, DHTHumi) => {
@@ -26,8 +23,6 @@ setInterval(() => {
         });    
     }, 2000);
     
-module.exports = {
-         getTemperature,
-         getHumidity
-    }
+module.exports.getTemperature = () => cache.temperature
+module.exports.getHumidity = () => cache.humidity
     
