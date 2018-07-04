@@ -20,37 +20,27 @@ app.get('/', function (req, res) {
     });
 
 /* **************** Fetching last ten temperature readings ******************** */ 
-app.get('/temperature/history', (err, res) => {
-         
-         if (err) {
-                 console.log(`Temperature Fetching Error: ${err}`); 
+app.get('/temperature/history', (req, res) => {
+        sensorDb.fetchLatestReadings('temperature', 10, (err, data) => {
+            if (err) {
+                 console.log(err);
+                 return res.status(500).end();
             } else {
-                 sensorDb.fetchLatestReadings('temperature', 10, (err, data) => {
-                     if (err) {
-                             console.log(err);
-                             return res.status(500).end();
-                        } else {
-                             res.json(data.reverse()); 
-                        }   
-                    });   
-                }
+                 res.json(data.reverse()); 
+                }   
+        });   
     });
 
 /* **************** Fetching last ten humidity readings ******************** */ 
-app.get('/humidity/history', (err, res) => {
-         
-        if (err) {
-             console.log(`Humidity Fetching Error: ${err}`); 
+app.get('/humidity/history', (req, res) => {
+        sensorDb.fetchLatestReadings('humidity', 10, (err, data) => {
+            if (err) {
+                 console.log(err);
+                 return res.status(500).end();
             } else {
-                 sensorDb.fetchLatestReadings('humidity', 10, (err, data) => {
-                     if (err) {
-                             console.log(err);
-                             return res.status(500).end();
-                        } else {
-                             res.json(data.reverse()); 
-                        }   
-                    });   
-                }
+                 res.json(data.reverse()); 
+                }   
+        }); 
     });    
 
 /* ************ Creatig HTTP Server ************ */
