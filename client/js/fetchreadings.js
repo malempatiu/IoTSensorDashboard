@@ -9,7 +9,7 @@ const temperatureChartConfig = {
          //dataset for temperature values
          datasets: [{
              data: [],
-             backgroundColor: 'rgba(234, 82, 82, 0.7)'
+             backgroundColor: 'rgba(255, 44, 44)'
             }]
         },
      options: {
@@ -39,7 +39,7 @@ const humidityChartConfig = {
          labels: [],
          datasets: [{
              data: [],
-             backgroundColor: 'rgba(234, 82, 82, 0.7)'
+             backgroundColor: 'rgba(33, 34, 255)'
             }]
         },
      options: {
