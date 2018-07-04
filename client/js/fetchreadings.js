@@ -66,7 +66,38 @@ const addData = (arr, value, maxLen) => {
          arr.shift();
         }
     };
-             
+    
+const fetchTemperatureHistory = () => {
+         fetch('/temperature/history').then(response => {
+             return response.json();
+         }).then(data => {
+             data.forEach( (reading) => {
+                     const dateNow = new Date(reading.createdAt + 'Z');
+                     const timeNow = `${dateNow.getHours()}:${dateNow.getMinutes()}:${dateNow.getSeconds()}`;
+                     addData(temperatureChartConfig.data.labels, timeNow, 10);
+                     addData(temperatureChartConfig.data.datasets[0].data, reading.value, 10);
+                });
+                temperatureChart.update();
+            });   
+    };
+fetchTemperatureHistory();
+
+const fetchHumidityHistory = () => {
+         fetch('/humidity/history').then(response => {
+             return response.json();
+         }).then(data => {
+             data.forEach( (reading) => {
+                     const dateNow = new Date(reading.createdAt + 'Z');
+                     const timeNow = `${dateNow.getHours()}:${dateNow.getMinutes()}:${dateNow.getSeconds()}`;
+                     addData(humidityChartConfig.data.labels, timeNow, 10);
+                     addData(humidityChartConfig.data.datasets[0].data, reading.value, 10);
+                });
+                
+                humidityChart.update();
+            });   
+    }; 
+fetchHumidityHistory();
+
 /* ************ Initializing client side socket connection with "io" ***************** */
 const clientSocket = io();
 /* ************* Listening on custom event for getting new temperature value ***************** */
